@@ -1,51 +1,86 @@
-*{
-  margin:0;
-  padding:0;
+:root {
+  --bg: rgba(6, 106, 189, 0.71);
+  --card: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(49, 97, 240, 0.55);
+  --text: #f3f6ff;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px;
-background-color: rgba(6, 106, 189, 0.71);
 }
-body{
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-} 
-h1{
-  margin:0;
-  padding: 10px 90px;
-  line-height: 1;
-  width: fit-content;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(124,92,255,0.35), rgba(34,211,238,0.25));
-  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-  border: 1px solid rgba(49, 97, 240, 0.692);
- 
-
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, rgba(34, 211, 238, 0.25), transparent 40%),
+    var(--bg);
+  color: var(--text);
 }
 
-button{
+
+#root > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px 22px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  padding: 10px 24px;
+  line-height: 1.1;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 92, 255, 0.35),
+    rgba(34, 211, 238, 0.25)
+  );
+  border: 1px solid rgba(49, 97, 240, 0.55);
+}
+
+
+
+button {
   padding: 12px 22px;
-  margin: 10px 10px;
+  margin: 0 8px;
   border: 0;
   border-radius: 14px;
   font-weight: 700;
   letter-spacing: 0.2px;
   cursor: pointer;
-  background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
-  border: 1px solid rgba(255, 0, 0, 0.16);
-
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.06)
+  );
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
-button:hover{
+button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 42px rgba(0,0,0,0.35);
-  background: linear-gradient(135deg, rgba(124,92,255,0.35), rgba(34,211,238,0.22));
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(124, 92, 255, 0.35),
+    rgba(34, 211, 238, 0.22)
+  );
 }
+
+button:active {
+  transform: translateY(-1px);
+}
+
 
 
